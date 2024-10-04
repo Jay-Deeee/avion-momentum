@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="./styles.css" type="text/css" />
+        <title>Momentum App</title>
+    </head>
+
+    <body>
+        <section id="main">
+            <!-- Time -->
+            <div id="time"></div>
+
+            <!-- Name -->
+            <h1 class="header">Good evening</h1>
+            <div class="textBox">
+                <input
+                    type="text"
+                    id="name"
+                    class="input"
+                    placeholder="Enter name here"
+                    required
+                />
+                <button id="editButton" class="inputButton">
+                    <i class="fa-solid fa-arrow-right-to-bracket thin"></i>
+                </button>
+            </div>
+
+            <!-- Random quote story -->
+            <div class="quote">
+                <div id="randomQuote"></div>
+                <div id="quoteAuthor"></div>
+            </div>
+        </section>
+
+        <section id="sub">
+            <!-- Adding task story -->
+            <div id="taskList"></div>
+            <input
+                type="text"
+                id="taskInput"
+                class="input"
+                placeholder="Add new task"
+                required
+            />
+            <button id="addButton" class="inputButton">
+                <i class="fa-solid fa-arrow-right-to-bracket thin"></i>
+            </button>
+        </section>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
