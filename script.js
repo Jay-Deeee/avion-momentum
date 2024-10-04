@@ -1,11 +1,67 @@
+const bgImages = [
+    "./assets/backgrounds/1.jpg",
+    "./assets/backgrounds/2.jpg",
+    "./assets/backgrounds/3.jpg",
+    "./assets/backgrounds/4.jpg",
+    "./assets/backgrounds/5.jpg",
+    "./assets/backgrounds/6.jpg",
+    "./assets/backgrounds/7.jpg",
+    "./assets/backgrounds/8.jpg",
+    "./assets/backgrounds/9.jpg",
+]
+
+let randomNumber = Math.random() * bgImages.length;
+let newNumber = Math.floor(randomNumber);
+document.querySelector("body").style.backgroundImage = `url('${bgImages[newNumber]}')`;
+
+function hello() {
+    let header = document.querySelector(".header");
+    let date = new Date();
+    let hours = date.getHours();
+    if(hours <= 11) {
+        header.textContent = "Good morning";
+    } else if(hours > 11 && hours < 18) {
+        header.textContent = "Good afternoon";
+    } else if(hours >= 18) {
+        header.textContent = "Good evening";
+    }
+};
+
+hello();
+
+let nameInput = document.querySelector("#name");
+let missionInput = document.getElementById("missionInput");
+let taskInput = document.getElementById("taskInput");
+
+function editName() {
+    let header = document.querySelector(".header");
+    let date = new Date();
+    let hours = date.getHours();
+    if(hours <= 11) {
+        header.textContent = `Good morning, ${nameInput.value}`;
+    } else if(hours > 11 && hours < 18) {
+        header.textContent = `Good afternoon, ${nameInput.value}`;
+    } else if(hours >= 18) {
+        header.textContent = `Good evening, ${nameInput.value}`;
+    }
+    name.value = "";
+}
+
+function editMission() {
+    let mission = document.getElementById("mission");
+    let missionInput = document.getElementById("missionInput");
+    mission.textContent = `${missionInput.value}`
+    missionInput.value = "";
+}
+
 function addTask() {
     const taskInput = document.getElementById("taskInput");
     const taskText = taskInput.value;
     const taskList = document.getElementById("taskList");
     const listItem = document.createElement("div");
     const label = document.createElement("label");
-    label.textContent = taskText
-    // if(taskInput.value != "") {label.textContent = taskText};
+    label.textContent = ` ${taskText}`
+    if(taskInput.value == "") {return};
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.onclick = function() {
@@ -17,23 +73,30 @@ function addTask() {
     taskInput.value = "";
 }
 
-function editName() {
-    let name = document.querySelector("#name");
-    let header = document.querySelector(".header");
-    let date = new Date()
-    let hours = date.getHours();
-    if(hours <= 11) {
-        header.textContent = `Good morning, ${name.value}`;
-    } else if(hours > 11 && hours < 18) {
-        header.textContent = `Good afternoon, ${name.value}`;
-    } else if(hours >= 18) {
-        header.textContent = `Good evening, ${name.value}`;
-    }
-    name.value = "";
-}
-  
 document.getElementById("editButton").addEventListener('click', editName);
 document.getElementById("addButton").addEventListener('click', addTask);
+document.getElementById("missionButton").addEventListener('click', editMission);
+
+nameInput.addEventListener("keypress", function(event) {
+    if(event.key == "Enter") {
+        event.preventDefault();
+        document.getElementById("editButton").click()
+    }
+});
+
+missionInput.addEventListener("keypress", function(event) {
+    if(event.key == "Enter") {
+        event.preventDefault();
+        document.getElementById("missionButton").click()
+    }
+});
+
+taskInput.addEventListener("keypress", function(event) {
+    if(event.key == "Enter") {
+        event.preventDefault();
+        document.getElementById("addButton").click()
+    }
+});
 
 function formatAMPM(date) {
     let hours = date.getHours();
@@ -63,8 +126,8 @@ const quotes = [
         author: "Normal Vincent Peale"
     },
     {
-        quote: "I have a dream.",
-        author: "Martin Luther King Jr."
+        quote: "Champions keep playing until they get it right.",
+        author: "Billie Jean King"
     },
     {
         quote: "You miss 100% of the shots you don't take.",
@@ -99,7 +162,8 @@ const quotes = [
         author: "Louis Pasteur"
     }
 ];
-let randomNumber = Math.random() * quotes.length;
-let newNumber = Math.floor(randomNumber);
-document.getElementById("randomQuote").textContent = `"${quotes[newNumber].quote}"`;
-document.getElementById("quoteAuthor").textContent = `- ${quotes[newNumber].author}`;
+
+let randomQuote = Math.random() * quotes.length;
+let newQuote = Math.floor(randomQuote);
+document.getElementById("randomQuote").textContent = `"${quotes[newQuote].quote}"`;
+document.getElementById("quoteAuthor").textContent = `- ${quotes[newQuote].author}`;

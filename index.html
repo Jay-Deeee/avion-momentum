@@ -17,7 +17,7 @@
             <div id="time"></div>
 
             <!-- Name -->
-            <h1 class="header">Good evening</h1>
+            <h1 class="header"></h1>
             <div class="textBox">
                 <input
                     type="text"
@@ -31,26 +31,51 @@
                 </button>
             </div>
 
-            <!-- Random quote story -->
+            <!-- Quote -->
             <div class="quote">
                 <div id="randomQuote"></div>
                 <div id="quoteAuthor"></div>
             </div>
         </section>
 
-        <section id="sub">
-            <!-- Adding task story -->
-            <div id="taskList"></div>
-            <input
-                type="text"
-                id="taskInput"
-                class="input"
-                placeholder="Add new task"
-                required
-            />
-            <button id="addButton" class="inputButton">
-                <i class="fa-solid fa-arrow-right-to-bracket thin"></i>
-            </button>
+        <!-- Mission -->
+        <section id="sub-1">
+            <div>
+                <h3>My Mission:</h3>
+                <p id="mission"></p>
+            </div>
+            <div class="textBox">
+                <input
+                    type="text"
+                    id="missionInput"
+                    class="input"
+                    placeholder="What is your mission for today?"
+                    required
+                />
+                <button id="missionButton" class="inputButton">
+                    <i class="fa-solid fa-arrow-right-to-bracket thin"></i>
+                </button>
+            </div>
+        </section>
+
+        <section id="sub-2">
+            <!-- Task list -->
+            <div>
+                <h3>To-Do List:</h3>
+                <div id="taskList"></div>
+            </div>
+            <div class="textBox">
+                <input
+                    type="text"
+                    id="taskInput"
+                    class="input"
+                    placeholder="Add new task"
+                    required
+                />
+                <button id="addButton" class="inputButton">
+                    <i class="fa-solid fa-arrow-right-to-bracket thin"></i>
+                </button>
+            </div>
         </section>
 
         <script src="./script.js"></script>
