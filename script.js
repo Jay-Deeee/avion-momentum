@@ -44,7 +44,7 @@ function editName() {
     } else if(hours >= 18) {
         header.textContent = `Good evening, ${nameInput.value}`;
     }
-    name.value = "";
+    nameInput.value = "";
 }
 
 function editMission() {
