@@ -82,15 +82,109 @@ section {
     width: 100%;
 }
 
-.quote {
+/* START OF QUOTE */
+.quoteContainer {
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
     padding-top: 30px;
+}
+
+.quote {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
     font-style: italic;
+    grid-column: 2/3;
+}
+
+.quote:hover ~ .editMenu, .editMenu:hover {
+    visibility: visible;
 }
 
 #quoteAuthor {
-    text-align: end;
-    padding-right: 10%;
+    align-self: end;
+    padding-right: 5%;
 }
+
+/* QUOTE MENU */
+.editMenu {
+    grid-column: 3/4;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    background: none;
+    align-items: center;
+    width: max-content;
+    position: relative;
+    left: -20px;
+    visibility: hidden;
+}
+
+.editMenu label {
+    color: #b4cfec;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    width: 15px;
+    height: 35px;
+    margin: 0;
+    padding: 5px 2px;
+    cursor: pointer;
+}
+
+.dot {
+    width: 2px;
+    height: 2px;
+    border: 2px solid #b4cfec;
+    border-radius: 2px;
+    background-color: #b4cfec;
+}
+
+.editMenu input {
+    display: none;
+}
+
+.editMenu div input {
+    display: block;
+}
+
+.editMenu input:checked ~ .dropmenu {
+    max-width: 400px;
+    width: auto;
+    padding: 10px;
+    border: 1px solid #b4cfec;
+    border-radius: 10px;
+    margin-left: 5px;
+    transition: max-width 0.2s ease-in;
+}
+
+#toggler {
+    list-style-type: none;
+}
+
+.dropmenu {
+    padding: 0;
+    max-width: 0;
+    height: 100px;
+    overflow: hidden;
+    background: #1d295150;
+}
+
+.edit {
+    height: 30px;
+}
+
+.dropmenu .edit .textBox {
+    margin-top: 0;
+    height: 30px;
+}
+/* .dropmenu div .textBox {
+    min-width: 0 !important;
+} */
+/* END OF QUOTE */
 
 #mission {
     text-indent: 20%;

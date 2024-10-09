@@ -167,3 +167,34 @@ let randomQuote = Math.random() * quotes.length;
 let newQuote = Math.floor(randomQuote);
 document.getElementById("randomQuote").textContent = `"${quotes[newQuote].quote}"`;
 document.getElementById("quoteAuthor").textContent = `- ${quotes[newQuote].author}`;
+
+function editQuote() {
+    let quote = document.getElementById("randomQuote");
+    let quoteInput = document.getElementById("quoteInput");
+    quote.textContent = `"${quoteInput.value}"`;
+    quoteInput.value = "";
+}
+
+function editAuthor() {
+    let author = document.getElementById("quoteAuthor");
+    let authorInput = document.getElementById("authorInput");
+    author.textContent = `- ${authorInput.value}`;
+    authorInput.value = "";
+}
+
+document.getElementById("quoteButton").addEventListener('click', editQuote);
+document.getElementById("authorButton").addEventListener('click', editAuthor);
+
+quoteInput.addEventListener("keypress", function(event) {
+    if(event.key == "Enter") {
+        event.preventDefault();
+        document.getElementById("quoteButton").click()
+    }
+});
+
+authorInput.addEventListener("keypress", function(event) {
+    if(event.key == "Enter") {
+        event.preventDefault();
+        document.getElementById("authorButton").click()
+    }
+});

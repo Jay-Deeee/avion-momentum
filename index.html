@@ -32,9 +32,50 @@
             </div>
 
             <!-- Quote -->
-            <div class="quote">
-                <div id="randomQuote"></div>
-                <div id="quoteAuthor"></div>
+            <div class="quoteContainer">
+                <div class="quote">
+                    <div id="randomQuote"></div>
+                    <div id="quoteAuthor"></div>
+                </div>
+                <div class="editMenu">
+                    <input id="toggler" type="checkbox" name="menu" />
+                    <label for="toggler">
+                        <div class="dot dot-1"></div>
+                        <div class="dot dot-2"></div>
+                        <div class="dot dot-3"></div>
+                    </label>
+                    <div class="dropmenu">
+                        <div>Edit your quote:</ldiv>
+                        <div class="edit">
+                            <div class="textBox">
+                                <input
+                                    type="text"
+                                    id="quoteInput"
+                                    class="input"
+                                    placeholder="Enter new quote"
+                                    required
+                                />
+                                <button id="quoteButton" class="inputButton">
+                                    <i class="fa-solid fa-arrow-right-to-bracket thin"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="edit">
+                            <div class="textBox">
+                                <input
+                                    type="text"
+                                    id="authorInput"
+                                    class="input"
+                                    placeholder="Enter new author"
+                                    required
+                                />
+                                <button id="authorButton" class="inputButton">
+                                    <i class="fa-solid fa-arrow-right-to-bracket thin"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
