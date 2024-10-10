@@ -107,7 +107,9 @@ taskInput.addEventListener("keypress", function(event) {
     }
 });
 
-function formatAMPM(date) {
+
+function formatAMPM() {
+    let date = new Date()
     let hours = date.getHours();
     let minutes = date.getMinutes();
     let ampm = hours >= 12 ? 'pm' : 'am';
@@ -115,11 +117,10 @@ function formatAMPM(date) {
     hours = hours ? hours : 12; // to make 0 hours = 12
     minutes = minutes < 10 ? '0'+minutes : minutes;
     let strTime = `${hours}:${minutes} ${ampm}`
-    return strTime;
-}
 
-let time = document.getElementById("time");
-time.textContent = formatAMPM(new Date);
+    document.getElementById("time").innerHTML = strTime;
+    setTimeout(function() {formatAMPM()}, 1000);
+}
 
 const quotes = [
     {
