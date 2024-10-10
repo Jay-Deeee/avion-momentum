@@ -14,6 +14,15 @@ let randomNumber = Math.random() * bgImages.length;
 let newNumber = Math.floor(randomNumber);
 document.querySelector("body").style.backgroundImage = `url('${bgImages[newNumber]}')`;
 
+// navbar
+const menuIcon = document.querySelector(".hamburgerMenu");
+const navbar = document.querySelector(".navbar");
+
+menuIcon.addEventListener("click", () => {
+    navbar.classList.toggle("change");
+})
+// end of navbar
+
 function hello() {
     let header = document.querySelector(".header");
     let date = new Date();

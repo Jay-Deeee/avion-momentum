@@ -15,6 +15,105 @@ body {
     color: #b4cfec;
 }
 
+/* START OF NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100%;
+    background-color: #262626;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    border-radius: 0 0 0 60%;
+    transition: right 0.8s cubic-bezier(1, 0, 0, 1);
+    z-index: 1;
+}
+
+.change {
+    right: 0;
+}
+
+.hamburgerMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 30px;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    cursor: pointer;
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: #b4cfec;
+    transition: all 0.8s;
+}
+
+.change .line-1 {
+    transform: rotateZ(-405deg) translate(-8px, 6px);
+}
+
+.change .line-2 {
+    opacity: 0;
+}
+
+.change .line-3 {
+    transform: rotateZ(405deg) translate(-8px, -6px);
+}
+
+.navList {
+    text-align: right;
+}
+
+.navItem {
+    list-style: none;
+    margin: 25px;
+}
+
+.navLink {
+    text-decoration: none;
+    font-size: 22px;
+    color: #b4cfec;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 3px 0;
+}
+
+.navLink::before,
+.navLink::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: chocolate;
+    position: absolute;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.navLink::before {
+    top: 0;
+    transform-origin: left;
+}
+
+.navLink::after {
+    bottom: 0;
+    transform-origin: right;
+}
+
+.navLink:hover::before,
+.navLink:hover::after {
+    transform: scaleX(1);
+}
+/* END OF NAVBAR */
+
 .completed {
     text-decoration: line-through;
 }
